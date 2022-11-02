@@ -10,31 +10,34 @@ db.createColletion('mensajes')
 db.createColletion('productos')
 
 db.mensajes.insertMany([
-    {id:1,username:'camilo@gmail.com',time:'01/11/2022 16:24 p.m.',text:'hola, ¿alguien recomieda algo bueno?'}
-    {id:2,username:'andres@gmail.com',time:'01/11/2022 16:24 p.m.',text:"jajaja todo es bueno en esta tienda"}
-    {id:3,username:'sebastian@gmail.com',time:'01/11/2022 16:28 p.m.',text:"el problema es que uno se antoja de todo"}
-    {id:4,username:'andres@gmail.com',time:'01/11/2022 16:43 p.m.',text:"claro, y no hay suficiente dinero"}
-    {id:5,username:'chat-bot@sport.com',time:'01/11/2022 18:52 p.m.',text:"tenemos excelente promociones y ventas a credito"}
-    {id:6,username:'daniel@gmail.com',time:'01/11/2022 21:02 p.m.',text:"uyy! que acabo de leer"}
-    {id:7,username:'sebastian@gmail.com',time:'01/11/2022 23:33 p.m.',text:"callate y toma mi dinero!!"}
-    {id:8,username:'salome@gmail.com',time:'02/11/2022 02:14 a.m.',text:"¿hay otras formas de pado?, por ejemplo mi riñon"}
-    {id:9,username:'maria@gmail.com',time:'02/11/2022 04:59 a.m.',text:"siiii, ór ejmplo yo podria modelar los productos"}
+    {id:1,username:'camilo@gmail.com',time:'01/11/2022 16:24 p.m.',text:'hola, ¿alguien recomieda algo bueno?'},
+    {id:2,username:'andres@gmail.com',time:'01/11/2022 16:24 p.m.',text:"jajaja todo es bueno en esta tienda"},
+    {id:3,username:'sebastian@gmail.com',time:'01/11/2022 16:28 p.m.',text:"el problema es que uno se antoja de todo"},
+    {id:4,username:'andres@gmail.com',time:'01/11/2022 16:43 p.m.',text:"claro, y no hay suficiente dinero"},
+    {id:5,username:'chat-bot@sport.com',time:'01/11/2022 18:52 p.m.',text:"tenemos excelente promociones y ventas a credito"},
+    {id:6,username:'daniel@gmail.com',time:'01/11/2022 21:02 p.m.',text:"uyy! que acabo de leer"},
+    {id:7,username:'sebastian@gmail.com',time:'01/11/2022 23:33 p.m.',text:"callate y toma mi dinero!!"},
+    {id:8,username:'salome@gmail.com',time:'02/11/2022 02:14 a.m.',text:"¿hay otras formas de pado?, por ejemplo mi riñon"},
+    {id:9,username:'maria@gmail.com',time:'02/11/2022 04:59 a.m.',text:"siiii, ór ejmplo yo podria modelar los productos"},
     {id:10,username:'chat-bot@gmail.com',time:'02/11/2022 06:07 a.m.',text:'NO!! ¬¬'}
 ])
 
 db.productos.insertMany([
-    {id:1,nombre:'camiseta',precio:1700,imagen:}
-    {id:2,nombre:'pantaloneta',precio:2300,imagen:}
-    {id:3,nombre:'sudadera',precio:2860,imagen:}
-    {id:4,nombre:'gorra',precio:1280,imagen:}
-    {id:5,nombre:'medias',precio:580,imagen:}
-    {id:6,nombre:'tennis',precio:4320,imagen:}
-    {id:7,nombre:'guantes',precio:900,imagen:}
-    {id:8,nombre:'guayos',precio:3350,imagen:}
-    {id:9,nombre:'bandas',precio:120,imagen:}
-    {id:10,nombre:'reloj deportivo',precio:4990,imagen:}
+    {id:1,nombre:'camiseta',precio:1700,imagen:'https://www.texor.co/wp-content/uploads/2019/11/T-SHIRT-BLANCA.jpg'},
+    {id:2,nombre:'pantaloneta',precio:2300,imagen:'https://oto.com.co/wp-content/uploads/2022/06/pantaloneta-elastica-azul.png'},
+    {id:3,nombre:'sudadera',precio:2860,imagen:'https://almacenessi.vteximg.com.br/arquivos/ids/182887-550-550/uniforme-sudadera-41462-7938-azulturqui_1.jpg?v=636976845226870000'},
+    {id:4,nombre:'gorra',precio:1280,imagen:'https://cf.shopee.com.co/file/1517f05ca5dd40b8beeb906d10aa4756'},
+    {id:5,nombre:'medias',precio:580,imagen:'https://assets.adidas.com/images/w_600,f_auto,q_auto/00bf8199e559467f8731ada1002bf0e5_9366/Medias_Deportivas_Malla_Estampadas_Largo_a_Media_Pantorrilla_Blanco_HA0110_03_standard.jpg'},
+    {id:6,nombre:'tennis',precio:4320,imagen:'https://i.pinimg.com/originals/07/41/05/0741053592fe18eb88987c48e7348f97.png'},
+    {id:7,nombre:'guantes',precio:900,imagen:'https://i.linio.com/p/d9276e5ee7d8d71ed8416d7c13647b0c-catalog.jpg'},
+    {id:8,nombre:'guayos',precio:3350,imagen:'http://www.arizon.com.co/wp-content/uploads/2021/11/Tenis-Guallos-naranjas-3-min.webp'},
+    {id:9,nombre:'bandas',precio:120,imagen:'https://images-na.ssl-images-amazon.com/images/I/61xTA6Mb65L._AC_UL210_SR210,210_.jpg'},
+    {id:10,nombre:'reloj deportivo',precio:4990,imagen:'https://cdnx.jumpseller.com/urbenmood/image/6069881/PS3220_Reloj_Deportivo_Hombre_Digital_LED_SKMEI_1426_Negro.png?1662923254'}
 ])
 
 
 #punto 3 - listar los documentos en cada coleccion
 
+db.mensajes.find()
+
+db.productos.find()
