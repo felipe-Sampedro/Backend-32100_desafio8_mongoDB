@@ -41,3 +41,33 @@ db.productos.insertMany([
 db.mensajes.find()
 
 db.productos.find()
+
+
+# punto 4 - mostrar la cantidad de documentos en cada una de ellas
+
+db.mensajes.countDocuments()
+
+db.productos.countDocuments()
+
+# punto 5 - CRUD sobre la colleccion de productos
+
+    # a) agregar un producto mas a la coleccion
+    db.productos.insertOne({id:11,nombre:'gafas',precio:2150,imagen:'https://cf.shopee.com.co/file/f561eb8df93b8a4a0471a75e1d5e35cd'})
+
+    # b) realizar una consulta con por nombre de producto especifico
+    db.productos.find({nombre:'camiseta'})
+
+        # i) listar los productos con precio menos a 1000
+        db.productos.find({precio:{$lt:1000}})
+
+        # ii) listar los productos con prpecio entre 1000 a 3000
+        db.productos.find({$and{{precio:{$gt:1000}},{precio:{$lt:3000}}})
+
+        #iii) listar los productos con prpecio mayot a 3000 
+        db.productos.find({precio:{$gt:3000}})
+
+        #iv) Traer solo el 3r producto mas barato
+        db.productos.find().sort(1).skip(2)
+
+
+    # C) 
