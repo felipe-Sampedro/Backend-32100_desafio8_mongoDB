@@ -67,7 +67,7 @@ db.productos.countDocuments()
         db.productos.find({precio:{$gt:3000}})
 
         #iv) Traer solo el 3r producto mas barato
-        db.productos.find().sort(1).skip(2)
+        db.productos.find().sort({precio:1}).skip(2)
 
 
     # c) hacer una actaulizacion agregando el campo stock con valor de 100
