@@ -70,4 +70,14 @@ db.productos.countDocuments()
         db.productos.find().sort(1).skip(2)
 
 
-    # C) 
+    # c) hacer una actaulizacion agregando el campo stock con valor de 100
+    db.productos.updateMany()
+
+    # d) cambiar el stock a cero de los productos con precio mayor a 4000 pesos
+    db.productos.updateMany()
+
+    # e) borrar los productos con precio menor a 1000
+    db.productos.deleteMany()
+
+
+# punto 6 - crear un usuario 'pepe' con clave 'asd456' que solo pueda leer la informacion - verificar que no pueda editar la info 
