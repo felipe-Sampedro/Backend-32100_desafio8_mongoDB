@@ -90,6 +90,13 @@ db.createUser(
     }
 )
 
-mongo -u pepe -p asd456 # ingreso
+#enlace con el servidor de la siguiente manera
+mongod --auth --debpath "C:\Program Files\MongoDB\Server\6.0\data"
+
+mongosh -u pepe -p asd456 # ingreso
 db.productos.find()  #prueba de lectura
 db.productos.insertOne({nombre:'producto prueba'}) #pruena de escritura que es rechazada
+
+#sale el siguiente error 
+
+#MongoServerError: not authorized on ecommerce to execute command { insert: "productos", documents: [ { nombre: "producto prueba", _id: ObjectId('63632ea3aabfb04cf05f6f64') } ], ordered: true, lsid: { id: UUID("ceffc421-8896-4997-b99b-0c35e6e73ee8") }, $db: "ecommerce" }
