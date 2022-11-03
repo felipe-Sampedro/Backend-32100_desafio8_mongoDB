@@ -81,3 +81,15 @@ db.productos.countDocuments()
 
 
 # punto 6 - crear un usuario 'pepe' con clave 'asd456' que solo pueda leer la informacion - verificar que no pueda editar la info 
+use admin
+db.createUser(
+    {
+        user:'pepe',
+        pwd:'asd456',
+        roles:[{role:"read",db:"ecommerce"}]
+    }
+)
+
+mongo -u pepe -p asd456 # ingreso
+db.productos.find()  #prueba de lectura
+db.productos.insertOne({nombre:'producto prueba'}) #pruena de escritura que es rechazada
