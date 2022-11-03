@@ -11,14 +11,14 @@ db.createColletion('productos')
 
 db.mensajes.insertMany([
     {id:1,username:'camilo@gmail.com',time:'01/11/2022 16:24 p.m.',text:'hola, ¿alguien recomieda algo bueno?'},
-    {id:2,username:'andres@gmail.com',time:'01/11/2022 16:24 p.m.',text:"jajaja todo es bueno en esta tienda"},
+    {id:2,username:'andres@gmail.com',time:'01/11/2022 16:26 p.m.',text:"jajaja todo es bueno en esta tienda"},
     {id:3,username:'sebastian@gmail.com',time:'01/11/2022 16:28 p.m.',text:"el problema es que uno se antoja de todo"},
     {id:4,username:'andres@gmail.com',time:'01/11/2022 16:43 p.m.',text:"claro, y no hay suficiente dinero"},
-    {id:5,username:'chat-bot@sport.com',time:'01/11/2022 18:52 p.m.',text:"tenemos excelente promociones y ventas a credito"},
+    {id:5,username:'chat-bot@sport.com',time:'01/11/2022 18:52 p.m.',text:"tenemos excelentes promociones y ventas a credito"},
     {id:6,username:'daniel@gmail.com',time:'01/11/2022 21:02 p.m.',text:"uyy! que acabo de leer"},
     {id:7,username:'sebastian@gmail.com',time:'01/11/2022 23:33 p.m.',text:"callate y toma mi dinero!!"},
-    {id:8,username:'salome@gmail.com',time:'02/11/2022 02:14 a.m.',text:"¿hay otras formas de pado?, por ejemplo mi riñon"},
-    {id:9,username:'maria@gmail.com',time:'02/11/2022 04:59 a.m.',text:"siiii, ór ejmplo yo podria modelar los productos"},
+    {id:8,username:'salome@gmail.com',time:'02/11/2022 02:14 a.m.',text:"¿hay otras formas de pado?, por ejemplo mi riñon XD"},
+    {id:9,username:'maria@gmail.com',time:'02/11/2022 04:59 a.m.',text:"siiii, o por ejemplo yo podria modelar los productos"},
     {id:10,username:'chat-bot@gmail.com',time:'02/11/2022 06:07 a.m.',text:'NO!! ¬¬'}
 ])
 
@@ -54,30 +54,30 @@ db.productos.countDocuments()
     # a) agregar un producto mas a la coleccion
     db.productos.insertOne({id:11,nombre:'gafas',precio:2150,imagen:'https://cf.shopee.com.co/file/f561eb8df93b8a4a0471a75e1d5e35cd'})
 
-    # b) realizar una consulta con por nombre de producto especifico
-    db.productos.find({nombre:'camiseta'})
+    # b) realizar una consulta por nombre de producto especifico
+    db.productos.find({nombre:'tennis'})
 
         # i) listar los productos con precio menos a 1000
         db.productos.find({precio:{$lt:1000}})
 
         # ii) listar los productos con prpecio entre 1000 a 3000
-        db.productos.find({$and{{precio:{$gt:1000}},{precio:{$lt:3000}}})
+        db.productos.find({$and:[{'precio':{$gt:1000}},{'precio':{$lt:3000}}]})
 
         #iii) listar los productos con prpecio mayot a 3000 
         db.productos.find({precio:{$gt:3000}})
 
         #iv) Traer solo el 3r producto mas barato
-        db.productos.find().sort({precio:1}).skip(2)
+        db.productos.find().sort({precio:1}).limit(1).skip(2)
 
 
     # c) hacer una actaulizacion agregando el campo stock con valor de 100
-    db.productos.updateMany()
+    db.productos.updateMany({},{$set:{stock:100}})
 
     # d) cambiar el stock a cero de los productos con precio mayor a 4000 pesos
-    db.productos.updateMany()
+    db.productos.updateMany({precio:{$gt:4000}},{$set:{stock:0}})
 
     # e) borrar los productos con precio menor a 1000
-    db.productos.deleteMany()
+    db.productos.deleteMany({precio:{$lt:1000}})
 
 
 # punto 6 - crear un usuario 'pepe' con clave 'asd456' que solo pueda leer la informacion - verificar que no pueda editar la info 
